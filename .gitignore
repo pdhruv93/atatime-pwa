@@ -10,7 +10,7 @@
 
 # production
 /build
-/build/gitignore
+/firebase/build
 
 # misc
 .DS_Store
