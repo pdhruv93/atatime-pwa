@@ -2,17 +2,10 @@ import { VStack, AvatarGroup, Avatar, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from 'react-type-animation';
 
+type Sequence = (string | number)[];
+
+const activities = ['singing', 'cooking', '@gym', '@beach'];
 const delay = 2000;
-const animationSequence = [
-    'singing',
-    delay,
-    'cooking',
-    delay,
-    '@gym',
-    delay,
-    '@beach',
-    delay,
-];
 
 const dummyUsers = [
     {
@@ -20,17 +13,22 @@ const dummyUsers = [
         profileURL: 'https://bit.ly/ryan-florence',
     },
     {
-        name: 'Segun Adebayo',
-        profileURL: 'https://bit.ly/sage-adebayo',
-    },
-    {
         name: 'Kent Dodds',
         profileURL: 'https://bit.ly/kent-c-dodds',
+    },
+    {
+        name: 'Ryan Florence',
+        profileURL: 'https://bit.ly/ryan-florence',
     },
 ];
 
 export function AppDemo() {
     const { t } = useTranslation('translation');
+    const animationSequence: Sequence = [];
+    activities.forEach((activity) => {
+        animationSequence.push(t('activityDemo', { activity }));
+        animationSequence.push(delay);
+    });
 
     return (
         <VStack align="start">
@@ -41,7 +39,6 @@ export function AppDemo() {
                 style={{ fontSize: '2em', display: 'inline-block' }}
                 repeat={Infinity}
             />
-            <Text>{t('commons.ok')},</Text>
 
             <AvatarGroup size="md" max={2}>
                 {dummyUsers.map((user, index) => (

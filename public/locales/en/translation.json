@@ -6,9 +6,6 @@
     "copyLink": "Copy Link",
     "whatsappLinkMessage": "Access {{appName}} by clicking on the link {{link}}",
     "activityDemo": "i´m {{activity}}",
-    "usersNearYou": "are doing the same near you",
-    "linkCopied": "Link Copied",
-    "commons": {
-        "ok": "ok"
-    }
+    "usersNearYou": "are doing the same near you, connect with them",
+    "linkCopied": "Link Copied"
 }
