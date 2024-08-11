@@ -1,0 +1,14 @@
+{
+    "meetPeople": "meet people with common interests",
+    "onlyForMobile": "we are only available on mobile devices",
+    "noInstallations": "no installations needed, passwordless logins",
+    "sendOnWhatsapp": "Send on Whastapp",
+    "copyLink": "Copy Link",
+    "whatsappLinkMessage": "Access {{appName}} by clicking on the link {{link}}",
+    "activityDemo": "i´m {{activity}}",
+    "usersNearYou": "are doing the same near you",
+    "linkCopied": "Link Copied",
+    "commons": {
+        "ok": "ok"
+    }
+}
