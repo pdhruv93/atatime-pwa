@@ -15,9 +15,11 @@ import { appName } from '../utils/constants';
 export function NavMenu() {
     return (
         <Flex w="100%" justify="space-between" mb="4">
-            <Heading as="h4" size="md" color="teal">
-                {appName}
-            </Heading>
+            <Link href="/home">
+                <Heading as="h4" size="md" color="teal">
+                    {appName}
+                </Heading>
+            </Link>
 
             <Menu isLazy>
                 <MenuButton
