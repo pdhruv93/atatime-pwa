@@ -1,0 +1,15 @@
+{
+    "desktopMode": {
+        "meetPeople": "meet people with common interests",
+        "onlyForMobile": "we are only available on mobile devices",
+        "linkCopied": "Link Copied",
+        "sendOnWhatsapp": "Send on Whastapp",
+        "copyLink": "Copy Link",
+        "whatsappLinkMessage": "Access {{appName}} by clicking on the link {{link}}",
+        "noInstallations": "no installations needed, passwordless logins"
+    },
+    "appDemo": {
+        "activityDemo": "i´m {{activity}}",
+        "usersNearYou": "are doing the same near you, connect with them"
+    }
+}

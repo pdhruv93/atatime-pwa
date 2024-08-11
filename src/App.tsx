@@ -1,13 +1,10 @@
 import { Button } from '@chakra-ui/react';
-
 import { isMobile } from 'react-device-detect';
-import { useTranslation } from 'react-i18next';
+import { DesktopMessage } from './components/DesktopMessage';
 
 export function App() {
-    const { t } = useTranslation('homepage');
-
     if (!isMobile) {
-        return <>{t('onlyForMobile')}</>;
+        return <DesktopMessage />;
     }
 
     return (
