@@ -18,7 +18,7 @@ import { copyToClipboard } from '../utils';
 import { useToast } from '@chakra-ui/react';
 
 export function DesktopMessage() {
-    const { t } = useTranslation('translation');
+    const { t } = useTranslation('translation', { keyPrefix: 'desktopMode' });
     const toast = useToast();
     const whatsappLink = `https://wa.me/?text=${t('whatsappLinkMessage', {
         appName,

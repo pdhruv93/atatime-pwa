@@ -23,7 +23,7 @@ const dummyUsers = [
 ];
 
 export function AppDemo() {
-    const { t } = useTranslation('translation');
+    const { t } = useTranslation('translation', { keyPrefix: 'appDemo' });
     const animationSequence: Sequence = [];
     activities.forEach((activity) => {
         animationSequence.push(t('activityDemo', { activity }));
