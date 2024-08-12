@@ -14,7 +14,8 @@
     },
     "navMenu": {
         "about": "About",
-        "profile": "Profile"
+        "profile": "Profile",
+        "addToHomeScreen": "Add to Home screen"
     },
     "profile": {
         "deleteAccount": "Delete account",
@@ -43,7 +44,8 @@
         "accessOnBrowser": "Access on a browser, add to home screen for quick access. No separate installations needed from stores.",
         "safeData": "Safe data",
         "privacy": "Your data or location is not shared outside the app ecosystem. Delete your account and data anytime from the Profile section",
-        "languageAlert": "You might not get users who marked activity in a different language. So prefer using English for marking your activity."
+        "languageAlert": "You might not get users who marked activity in a different language. So prefer using English for marking your activity.",
+        "addToHomeScreen": "Add to Home screen"
     },
     "favoriteActivities": {
         "yourFavActivities": "Activities you are following",

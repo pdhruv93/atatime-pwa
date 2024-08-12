@@ -1,10 +1,20 @@
-import { Alert, AlertIcon, Heading, VStack, Text } from '@chakra-ui/react';
+import {
+    Alert,
+    AlertIcon,
+    Heading,
+    VStack,
+    Text,
+    Button,
+    Icon,
+} from '@chakra-ui/react';
 import { AppDemo } from '../components/AppDemo';
-import { AddToHomeScreenButton } from '../components/AddToHomeScreenButton';
 import { useTranslation } from 'react-i18next';
+import { useAddToHomeScreenPrompt } from '../hooks/useAddToHomeScreenPrompt';
+import { MdAdd } from 'react-icons/md';
 
 export function AboutPage() {
     const { t } = useTranslation('translation', { keyPrefix: 'aboutPage' });
+    const { prompt, promptToInstall } = useAddToHomeScreenPrompt();
 
     const features = [
         {
@@ -19,7 +29,14 @@ export function AboutPage() {
         {
             name: t('noInstallations'),
             description: t('accessOnBrowser'),
-            component: <AddToHomeScreenButton />,
+            component: prompt ? (
+                <Button
+                    leftIcon={<Icon as={MdAdd} />}
+                    onClick={promptToInstall}
+                >
+                    {t('addToHomeScreen')}
+                </Button>
+            ) : null,
         },
         {
             name: t('safeData'),
