@@ -2,23 +2,22 @@ import {
     Button,
     FormControl,
     FormErrorMessage,
-    Icon,
     Input,
     InputGroup,
-    InputLeftElement,
+    InputLeftAddon,
+    InputRightAddon,
     VStack,
 } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { dummyUser } from '../../utils/constants';
+import { someURLS, dummyUser } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
-import { MdOutlineAccountCircle, MdFacebook, MdWhatsapp } from 'react-icons/md';
-import { FiInstagram } from 'react-icons/fi';
 
 interface FormInputs {
     name: string;
     fb?: string;
     insta?: string;
     whatsapp?: string;
+    radius?: number;
 }
 
 export function PersonalDetailsForm() {
@@ -31,6 +30,7 @@ export function PersonalDetailsForm() {
         fb: dummyUser.fb,
         insta: dummyUser.insta,
         whatsapp: dummyUser.whatsapp,
+        radius: dummyUser.radius,
     };
 
     const {
@@ -50,9 +50,7 @@ export function PersonalDetailsForm() {
             <VStack spacing="4">
                 <FormControl isInvalid={!!errors.name}>
                     <InputGroup>
-                        <InputLeftElement pointerEvents="none">
-                            <Icon as={MdOutlineAccountCircle} />
-                        </InputLeftElement>
+                        <InputLeftAddon>Name</InputLeftAddon>
                         <Input
                             type="text"
                             placeholder="Your name"
@@ -69,9 +67,7 @@ export function PersonalDetailsForm() {
 
                 <FormControl isInvalid={!!errors.fb}>
                     <InputGroup>
-                        <InputLeftElement pointerEvents="none">
-                            <Icon as={MdFacebook} />
-                        </InputLeftElement>
+                        <InputLeftAddon>{someURLS.fb}</InputLeftAddon>
                         <Input
                             type="text"
                             placeholder="FB username"
@@ -86,9 +82,7 @@ export function PersonalDetailsForm() {
 
                 <FormControl isInvalid={!!errors.insta}>
                     <InputGroup>
-                        <InputLeftElement pointerEvents="none">
-                            <Icon as={FiInstagram} />
-                        </InputLeftElement>
+                        <InputLeftAddon>{someURLS.insta}</InputLeftAddon>
                         <Input
                             type="text"
                             placeholder="Insta handle"
@@ -103,9 +97,7 @@ export function PersonalDetailsForm() {
 
                 <FormControl isInvalid={!!errors.whatsapp}>
                     <InputGroup>
-                        <InputLeftElement pointerEvents="none">
-                            <Icon as={MdWhatsapp} />
-                        </InputLeftElement>
+                        <InputLeftAddon>{someURLS.whatsapp}</InputLeftAddon>
                         <Input
                             type="text"
                             placeholder="Whatsapp No.(+23XXXX)"
@@ -118,7 +110,28 @@ export function PersonalDetailsForm() {
                     </FormErrorMessage>
                 </FormControl>
 
-                <Button variant="solid" isLoading={isSubmitting} type="submit">
+                <FormControl isInvalid={!!errors.radius}>
+                    <InputGroup>
+                        <InputLeftAddon>Show users within</InputLeftAddon>
+                        <Input
+                            type="number"
+                            placeholder="Connect users within this range"
+                            id="radius"
+                            {...register('radius')}
+                        />
+                        <InputRightAddon>km</InputRightAddon>
+                    </InputGroup>
+
+                    <FormErrorMessage>
+                        {errors.radius && errors.radius.message}
+                    </FormErrorMessage>
+                </FormControl>
+
+                <Button
+                    colorScheme="teal"
+                    isLoading={isSubmitting}
+                    type="submit"
+                >
                     Update
                 </Button>
             </VStack>
