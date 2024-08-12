@@ -27,7 +27,7 @@ export function NavMenu() {
                     cursor="pointer"
                     minW={0}
                 >
-                    <Avatar size="sm" src={'https://bit.ly/ryan-florence'} />
+                    <Avatar size="sm" src="https://bit.ly/ryan-florence" />
                 </MenuButton>
 
                 <MenuList>
