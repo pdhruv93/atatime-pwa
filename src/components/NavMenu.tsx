@@ -9,14 +9,17 @@ import {
     Heading,
 } from '@chakra-ui/react';
 import { MdManageAccounts, MdHelp } from 'react-icons/md';
-import { appName } from '../utils/constants';
+import { APP_NAME } from '../utils/constants';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function NavMenu() {
+    const { t } = useTranslation('translation', { keyPrefix: 'navMenu' });
+
     return (
         <Flex w="100%" justify="space-between" mb="4">
             <Heading as={ReactRouterLink} fontSize="xl" color="teal" to="/">
-                {appName}
+                {APP_NAME}
             </Heading>
 
             <Menu isLazy>
@@ -27,7 +30,7 @@ export function NavMenu() {
                     cursor="pointer"
                     minW={0}
                 >
-                    <Avatar size="sm" src={'https://bit.ly/ryan-florence'} />
+                    <Avatar size="sm" src="https://bit.ly/ryan-florence" />
                 </MenuButton>
 
                 <MenuList>
@@ -36,7 +39,7 @@ export function NavMenu() {
                         icon={<MdHelp />}
                         to="/about"
                     >
-                        About
+                        {t('about')}
                     </MenuItem>
 
                     <MenuItem
@@ -44,7 +47,7 @@ export function NavMenu() {
                         icon={<MdManageAccounts />}
                         to="/profile"
                     >
-                        Profile
+                        {t('profile')}
                     </MenuItem>
                 </MenuList>
             </Menu>

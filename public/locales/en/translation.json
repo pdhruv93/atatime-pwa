@@ -11,5 +11,35 @@
     "appDemo": {
         "activityDemo": "i´m {{activity}}",
         "usersNearYou": "are doing the same near you, connect with them"
+    },
+    "navMenu": {
+        "about": "About",
+        "profile": "Profile"
+    },
+    "profile": {
+        "deleteAccount": "Delete account",
+        "deleteMyAccount": "Delete my account",
+        "logout": "Logout"
+    },
+    "confirmationDialog": {
+        "info": "Are you sure? You can't undo this action afterwards."
+    },
+    "personalDetails": {
+        "name": "Your name",
+        "fbUsername": "FB username",
+        "instaHandle": "Insta handle",
+        "whatsappNumber": "Whatsapp No.(+23XXXX)",
+        "showUsersWithin": "Show users within",
+        "connectUsersWithinRadius": "Connect users within this range",
+        "required": "This is required",
+        "update": "Update"
+    },
+    "favoriteActivities": {
+        "yourFavActivities": "Activities you are following",
+        "noActivities": "Nothing here. Get started!"
+    },
+    "commons": {
+        "ok": "OK",
+        "cancel": "Cancel"
     }
 }

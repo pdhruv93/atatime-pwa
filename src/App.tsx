@@ -10,7 +10,7 @@ export function App() {
     }
 
     return (
-        <Container p="4">
+        <Container p="4" w="100%" h="90vh">
             <NavMenu />
             <Outlet />
         </Container>

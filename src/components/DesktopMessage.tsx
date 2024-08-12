@@ -9,7 +9,7 @@ import {
     VStack,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { appName, publicURL } from '../utils/constants';
+import { APP_NAME, PUBLIC_URL } from '../utils/constants';
 import Lottie from 'lottie-react';
 import mobileAnimation from '../lottie/mobile.json';
 import { MdLink, MdWhatsapp } from 'react-icons/md';
@@ -21,12 +21,12 @@ export function DesktopMessage() {
     const { t } = useTranslation('translation', { keyPrefix: 'desktopMode' });
     const toast = useToast();
     const whatsappLink = `https://wa.me/?text=${t('whatsappLinkMessage', {
-        appName,
-        link: encodeURIComponent(publicURL),
+        APP_NAME,
+        link: encodeURIComponent(PUBLIC_URL),
     })}`;
 
     const onLinkCopyHandler = () => {
-        copyToClipboard(publicURL);
+        copyToClipboard(PUBLIC_URL);
         toast({
             title: t('linkCopied'),
             status: 'info',
@@ -40,7 +40,7 @@ export function DesktopMessage() {
             <VStack h="80%" justify="space-between" align="start">
                 <VStack align="start">
                     <Heading as="h2" size="3xl" noOfLines={1}>
-                        {appName}
+                        {APP_NAME}
                     </Heading>
 
                     <Heading as="h5" size="sm">
