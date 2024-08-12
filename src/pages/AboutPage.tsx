@@ -1,33 +1,32 @@
 import { Alert, AlertIcon, Heading, VStack, Text } from '@chakra-ui/react';
 import { AppDemo } from '../components/AppDemo';
 import { AddToHomeScreenButton } from '../components/AddToHomeScreenButton';
-
-const features = [
-    {
-        name: 'About',
-        description:
-            '@@time lets you connect with pepople doing the same activity as you. mark you activity and find users doing the same activity as you at the same time.',
-        component: <AppDemo />,
-    },
-    {
-        name: 'Passwordless Login',
-        description:
-            'Easy sigin with just your email, no need to remember password.',
-    },
-    {
-        name: 'No store installations',
-        description:
-            'Access on a browser, add to home screen for quick access. No separate installations needed from stores.',
-        component: <AddToHomeScreenButton />,
-    },
-    {
-        name: 'Safe data',
-        description:
-            'Your data is not shared outside the app ecosystem. Delete your account and data anytime from the Profile section',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 export function AboutPage() {
+    const { t } = useTranslation('translation', { keyPrefix: 'aboutPage' });
+
+    const features = [
+        {
+            name: t('about'),
+            description: t('aboutApp'),
+            component: <AppDemo />,
+        },
+        {
+            name: t('passwordless'),
+            description: t('easySignin'),
+        },
+        {
+            name: t('noInstallations'),
+            description: t('accessOnBrowser'),
+            component: <AddToHomeScreenButton />,
+        },
+        {
+            name: t('safeData'),
+            description: t('privacy'),
+        },
+    ];
+
     return (
         <VStack my="10" spacing="10">
             {features.map((feature, index) => (
@@ -42,8 +41,7 @@ export function AboutPage() {
 
             <Alert status="info">
                 <AlertIcon />
-                You might not get users who marked activity in a different
-                language. So prefer using English for marking your activity.
+                {t('languageAlert')}
             </Alert>
         </VStack>
     );

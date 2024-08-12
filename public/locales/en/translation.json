@@ -34,7 +34,17 @@
         "required": "This is required",
         "update": "Update"
     },
-    "aboutPage": {},
+    "aboutPage": {
+        "about": "About",
+        "aboutApp": "@@time lets you connect with pepople doing the same activity as you. mark you activity and find users doing the same activity as you at the same time.",
+        "passwordless": "Passwordless Login",
+        "easySignin": "Easy sigin with just your email, no need to remember password.",
+        "noInstallations": "No store installations",
+        "accessOnBrowser": "Access on a browser, add to home screen for quick access. No separate installations needed from stores.",
+        "safeData": "Safe data",
+        "privacy": "Your data or location is not shared outside the app ecosystem. Delete your account and data anytime from the Profile section",
+        "languageAlert": "You might not get users who marked activity in a different language. So prefer using English for marking your activity."
+    },
     "favoriteActivities": {
         "yourFavActivities": "Activities you are following",
         "noActivities": "Nothing here. Get started!"
