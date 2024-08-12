@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { App } from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import theme from './theme';
 import './i18n';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -16,7 +17,7 @@ root.render(
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
 
         <ChakraProvider theme={theme}>
-            <App />
+            <RouterProvider router={router} />
         </ChakraProvider>
     </React.StrictMode>
 );

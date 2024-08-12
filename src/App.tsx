@@ -2,7 +2,7 @@ import { isMobile } from 'react-device-detect';
 import { DesktopMessage } from './components/DesktopMessage';
 import { NavMenu } from './components/NavMenu';
 import { Container } from '@chakra-ui/react';
-import { Router } from './router/Router';
+import { Outlet } from 'react-router-dom';
 
 export function App() {
     if (!isMobile) {
@@ -12,7 +12,7 @@ export function App() {
     return (
         <Container p="4">
             <NavMenu />
-            <Router />
+            <Outlet />
         </Container>
     );
 }
