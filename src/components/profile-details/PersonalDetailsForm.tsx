@@ -24,7 +24,6 @@ export function PersonalDetailsForm() {
     const { t } = useTranslation('translation', {
         keyPrefix: 'personalDetails',
     });
-
     const defaultValues = {
         name: dummyUser.name,
         fb: dummyUser.fb,
@@ -32,7 +31,6 @@ export function PersonalDetailsForm() {
         whatsapp: dummyUser.whatsapp,
         radius: dummyUser.radius,
     };
-
     const {
         handleSubmit,
         register,
@@ -40,7 +38,6 @@ export function PersonalDetailsForm() {
     } = useForm<FormInputs>({
         defaultValues,
     });
-
     const onSubmit: SubmitHandler<FormInputs> = (data) => {
         console.log('Submit data', data);
     };
@@ -50,13 +47,13 @@ export function PersonalDetailsForm() {
             <VStack spacing="4">
                 <FormControl isInvalid={!!errors.name}>
                     <InputGroup>
-                        <InputLeftAddon>Name</InputLeftAddon>
+                        <InputLeftAddon>{t('name')}</InputLeftAddon>
                         <Input
                             type="text"
-                            placeholder="Your name"
+                            placeholder={t('name')}
                             id="name"
                             {...register('name', {
-                                required: 'This is required',
+                                required: t('required'),
                             })}
                         />
                     </InputGroup>
@@ -70,7 +67,7 @@ export function PersonalDetailsForm() {
                         <InputLeftAddon>{someURLS.fb}</InputLeftAddon>
                         <Input
                             type="text"
-                            placeholder="FB username"
+                            placeholder={t('fbUsername')}
                             id="fb"
                             {...register('fb')}
                         />
@@ -85,7 +82,7 @@ export function PersonalDetailsForm() {
                         <InputLeftAddon>{someURLS.insta}</InputLeftAddon>
                         <Input
                             type="text"
-                            placeholder="Insta handle"
+                            placeholder={t('instaHandle')}
                             id="insta"
                             {...register('insta')}
                         />
@@ -100,7 +97,7 @@ export function PersonalDetailsForm() {
                         <InputLeftAddon>{someURLS.whatsapp}</InputLeftAddon>
                         <Input
                             type="text"
-                            placeholder="Whatsapp No.(+23XXXX)"
+                            placeholder={t('whatsappNumber')}
                             id="whatsapp"
                             {...register('whatsapp')}
                         />
@@ -112,10 +109,10 @@ export function PersonalDetailsForm() {
 
                 <FormControl isInvalid={!!errors.radius}>
                     <InputGroup>
-                        <InputLeftAddon>Show users within</InputLeftAddon>
+                        <InputLeftAddon>{t('showUsersWithin')}</InputLeftAddon>
                         <Input
                             type="number"
-                            placeholder="Connect users within this range"
+                            placeholder={t('connectUsersWithinRadius')}
                             id="radius"
                             {...register('radius')}
                         />
@@ -132,11 +129,9 @@ export function PersonalDetailsForm() {
                     isLoading={isSubmitting}
                     type="submit"
                 >
-                    Update
+                    {t('update')}
                 </Button>
             </VStack>
         </form>
     );
 }
-
-export default PersonalDetailsForm;
