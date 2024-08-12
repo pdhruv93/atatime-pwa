@@ -7,19 +7,17 @@ import {
     Button,
     Flex,
     Heading,
-    Link,
 } from '@chakra-ui/react';
 import { MdManageAccounts, MdHelp } from 'react-icons/md';
 import { appName } from '../utils/constants';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 export function NavMenu() {
     return (
         <Flex w="100%" justify="space-between" mb="4">
-            <Link href="/home">
-                <Heading as="h4" size="md" color="teal">
-                    {appName}
-                </Heading>
-            </Link>
+            <Heading as={ReactRouterLink} fontSize="xl" color="teal" to="/">
+                {appName}
+            </Heading>
 
             <Menu isLazy>
                 <MenuButton
@@ -33,13 +31,18 @@ export function NavMenu() {
                 </MenuButton>
 
                 <MenuList>
-                    <MenuItem as={Link} icon={<MdHelp />} href="/about">
+                    <MenuItem
+                        as={ReactRouterLink}
+                        icon={<MdHelp />}
+                        to="/about"
+                    >
                         About
                     </MenuItem>
+
                     <MenuItem
-                        as={Link}
+                        as={ReactRouterLink}
                         icon={<MdManageAccounts />}
-                        href="/profile"
+                        to="/profile"
                     >
                         Profile
                     </MenuItem>
