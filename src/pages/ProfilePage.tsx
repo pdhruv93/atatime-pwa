@@ -20,7 +20,7 @@ export function ProfilePage() {
     };
 
     return (
-        <VStack w="100%" justify="space-between" align="center">
+        <VStack w="100%" justify="space-between" align="center" spacing="6">
             <VStack>
                 <Avatar
                     size="xl"
@@ -35,7 +35,7 @@ export function ProfilePage() {
             <PastActivities userId="dummy_user_id" />
 
             <ButtonGroup>
-                <Button>Logout</Button>
+                <Button>{t('logout')}</Button>
 
                 <DeleteAccountAction
                     confirmationTitle={t('deleteAccount')}
@@ -43,6 +43,7 @@ export function ProfilePage() {
                         <Button
                             variant="outline"
                             leftIcon={<Icon as={MdDelete} />}
+                            color="red.300"
                         >
                             {t('deleteMyAccount')}
                         </Button>

@@ -12,12 +12,21 @@
         "activityDemo": "i´m {{activity}}",
         "usersNearYou": "are doing the same near you, connect with them"
     },
+    "navMenu": {
+        "about": "About",
+        "profile": "Profile"
+    },
     "profile": {
         "deleteAccount": "Delete account",
-        "deleteMyAccount": "Delete my account"
+        "deleteMyAccount": "Delete my account",
+        "logout": "Logout"
     },
     "confirmationDialog": {
         "info": "Are you sure? You can't undo this action afterwards."
+    },
+    "recentActivities": {
+        "yourRecentActivities": "Your recent activities",
+        "noActivities": "Nothing here. Get started!"
     },
     "commons": {
         "ok": "OK",
