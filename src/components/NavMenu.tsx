@@ -8,13 +8,15 @@ import {
     Flex,
     Heading,
 } from '@chakra-ui/react';
-import { MdManageAccounts, MdHelp } from 'react-icons/md';
+import { MdManageAccounts, MdHelp, MdAdd } from 'react-icons/md';
 import { APP_NAME } from '../utils/constants';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useAddToHomeScreenPrompt } from '../hooks/useAddToHomeScreenPrompt';
 
 export function NavMenu() {
     const { t } = useTranslation('translation', { keyPrefix: 'navMenu' });
+    const { prompt, promptToInstall } = useAddToHomeScreenPrompt();
 
     return (
         <Flex w="100%" justify="space-between" mb="4">
@@ -49,6 +51,12 @@ export function NavMenu() {
                     >
                         {t('profile')}
                     </MenuItem>
+
+                    {prompt ? (
+                        <MenuItem icon={<MdAdd />} onClick={promptToInstall}>
+                            {t('addToHomeScreen')}
+                        </MenuItem>
+                    ) : null}
                 </MenuList>
             </Menu>
         </Flex>
