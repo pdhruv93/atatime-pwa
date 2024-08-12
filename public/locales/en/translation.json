@@ -24,8 +24,9 @@
     "confirmationDialog": {
         "info": "Are you sure? You can't undo this action afterwards."
     },
-    "recentActivities": {
-        "yourRecentActivities": "Your recent activities",
+    "personalDetails": {},
+    "favoriteActivities": {
+        "yourFavActivities": "Activities you are following",
         "noActivities": "Nothing here. Get started!"
     },
     "commons": {

@@ -1,16 +1,12 @@
-import {
-    Avatar,
-    VStack,
-    ButtonGroup,
-    Button,
-    Heading,
-    IconButton,
-    Icon,
-} from '@chakra-ui/react';
-import { PastActivities } from '../components/PastActivities';
+import { VStack, ButtonGroup, Button, Icon } from '@chakra-ui/react';
 import { ConfirmationDialog as DeleteAccountAction } from '../components/ConfirmationDialog';
 import { useTranslation } from 'react-i18next';
 import { MdDelete } from 'react-icons/md';
+import {
+    FavoriteActivities,
+    PersonalDetailsForm,
+    ProfileImage,
+} from '../components/profile-details';
 
 export function ProfilePage() {
     const { t } = useTranslation('translation', { keyPrefix: 'profile' });
@@ -20,19 +16,10 @@ export function ProfilePage() {
     };
 
     return (
-        <VStack w="100%" justify="space-between" align="center" spacing="6">
-            <VStack>
-                <Avatar
-                    size="xl"
-                    name="Christian Nwamba"
-                    src="https://bit.ly/ryan-florence"
-                />
-                <Heading fontSize="xl">Christian Nwamba</Heading>
-            </VStack>
-
-            <VStack>Form</VStack>
-
-            <PastActivities userId="dummy_user_id" />
+        <VStack w="100%" h="100%" justify="space-between" align="center">
+            <ProfileImage />
+            <FavoriteActivities />
+            <PersonalDetailsForm />
 
             <ButtonGroup>
                 <Button>{t('logout')}</Button>

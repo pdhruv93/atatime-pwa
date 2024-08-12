@@ -1,32 +1,20 @@
 import { Heading, Tag, TagLabel, VStack, Wrap, Text } from '@chakra-ui/react';
-import { MAX_PAST_ACTIVITIES } from '../utils/constants';
+import { dummyUser, MAX_PAST_ACTIVITIES } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
 
-interface PastActivitiesProps {
-    userId: string;
-}
-
-export function PastActivities({ userId }: PastActivitiesProps) {
+export function FavoriteActivities() {
     const { t } = useTranslation('translation', {
-        keyPrefix: 'recentActivities',
+        keyPrefix: 'favoriteActivities',
     });
-    const pastActivities = [
-        'sleeping',
-        'reading',
-        '@gym',
-        '@office',
-        '@pub',
-        'sleeping',
-        'sleeping',
-    ];
+    const favActivities = dummyUser.favActivities;
 
     return (
         <VStack>
-            <Heading fontSize="lg">{t('yourRecentActivities')}:</Heading>
+            <Heading fontSize="lg">{t('yourFavActivities')}:</Heading>
 
-            {pastActivities.length > 0 ? (
+            {favActivities.length > 0 ? (
                 <Wrap justify="center">
-                    {pastActivities
+                    {favActivities
                         .slice(0, MAX_PAST_ACTIVITIES)
                         .map((activity, index) => (
                             <Tag
