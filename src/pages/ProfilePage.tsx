@@ -16,7 +16,7 @@ export function ProfilePage() {
     };
 
     return (
-        <VStack w="100%" h="100%" justify="space-between" align="center">
+        <VStack align="center" spacing="16">
             <ProfileImage />
             <FavoriteActivities />
             <PersonalDetailsForm />
